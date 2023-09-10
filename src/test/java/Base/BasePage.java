@@ -30,7 +30,6 @@ public class BasePage {
 
     public void click(By by) {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(findElement(by)));
-        hoverElement(by);
         findElement(by).click();
     }
 

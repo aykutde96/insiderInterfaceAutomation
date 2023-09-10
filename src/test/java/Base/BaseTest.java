@@ -30,7 +30,7 @@ public class BaseTest {
     @Before
     public void setUp() {
         String browser = System.getProperty("BROWSER");
-        //browser = "CHROME";
+        browser = "CHROME";
         BrowserType browserType = BrowserType.valueOf(browser.toUpperCase());
         logger.info("---Test is starting---");
         switch (browserType) {
@@ -38,8 +38,9 @@ public class BaseTest {
                 ChromeOptions chromeOptions = new ChromeOptions();
                 //chromeOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
                 chromeOptions.addArguments("disable-translate");
-                chromeOptions.addArguments("disable-notifications");
-                chromeOptions.addArguments("--headless");
+                chromeOptions.addArguments("start-maximized");
+                chromeOptions.addArguments("--disable-notifications");
+                //chromeOptions.addArguments("--headless");
                 chromeOptions.setBrowserVersion("116");
                 setWebDriver(new ChromeDriver(chromeOptions));
                 break;
