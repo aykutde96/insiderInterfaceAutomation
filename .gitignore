@@ -1,0 +1,6 @@
+target/
+.idea/
+log/
+screenshots/
+### Mac OS ###
+.DS_Store
